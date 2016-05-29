@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "author": "Devendra Bhatte",
   "description": "socket,.io chat application",
+  "main": "index.js",
   "dependencies": {
     "express": "^4.10.2",
     "socket.io": "^1.4.6",
@@ -17,5 +18,8 @@
     "start": "node index.js",
     "test": "mocha",
     "postinstall": "bower install && grunt build"
+  },
+  "engines": {
+    "node": "5.0.0"
   }
 }
