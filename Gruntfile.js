@@ -27,4 +27,7 @@ module.exports = function(grunt) {
 
   // Define the default task
   grunt.registerTask('default', ['uglify' , 'watch']);
+
+  grunt.registerTask('build', ['uglify']);
+
 };

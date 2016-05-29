@@ -12,6 +12,7 @@ var s = http.listen(3000, "localhost", function () {
 });
 
 app.use(express.static(__dirname + '/public'));
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 
 io.on('connection', function(socket){
