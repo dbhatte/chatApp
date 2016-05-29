@@ -5,7 +5,9 @@ var io = require('socket.io')(http);
 
 var userArray = [];
 
-var s = http.listen(3000, "localhost", function () {
+var port = process.env.PORT || 8080;
+
+var s = http.listen(port, "localhost", function () {
     var host = s.address().address;
     var port = s.address().port;
     console.log('Group Poll app listening at http://%s:%s', host, port);
