@@ -5,10 +5,10 @@
   "description": "socket,.io chat application",
   "dependencies": {
     "express": "^4.10.2",
-    "socket.io": "^1.4.6"
+    "socket.io": "^1.4.6",
+    "bower": "^1.7.9"
   },
   "devDependencies": {
-    "bower": "^1.7.9",
     "grunt": "^1.0.1",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0"
