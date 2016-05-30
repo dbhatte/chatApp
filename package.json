@@ -2,7 +2,7 @@
   "name": "chat-app",
   "version": "0.0.1",
   "author": "Devendra Bhatte",
-  "description": "socket,.io chat application",
+  "description": "socket.io chat application",
   "main": "index.js",
   "dependencies": {
     "express": "^4.10.2",
