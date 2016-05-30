@@ -1,5 +1,21 @@
-<ul id="messages"></ul>
-<form name="chatform" class="css-form" novalidate ng-submit="sendMessage()">
-  	<input id="m" autocomplete="off" ng-model="message" class="form-control" />
-	<button type="submit" class="btn btn-success btn-lg">Send</button>
-</form>
+<div class="container-fluid">
+	<div class="row top-buffer">
+  		<div class="col-xs-12">
+		  <ul id="messages"></ul>
+		</div>
+	</div>
+	<div class="row top-buffer">
+  		<div class="col-xs-12">
+		  <form name="chatform" class="css-form" novalidate ng-submit="sendMessage()">
+				<div class="form-group">
+				  	<input id="m" autocomplete="off" ng-model="message" class="form-control" />
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-success btn-lg">Send</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+
+</div>
