@@ -6,21 +6,21 @@
 	  <div class="panel-body">
 	    <div class="container">
 			<div class="row top-buffer">
-		  		<div class="col-xs-6">
+		  		<div class="col-xs-12">
 				  <div>
 				    <input type="text" name="username" ng-model="username" class="form-control" placeholder="Please enter your username" minlength="4" maxlength="32" required="true" >
 				  </div>
 				</div>
 			</div>
 			<div class="row top-buffer">
-		  		<div class="col-xs-6">
+		  		<div class="col-xs-12">
 				  	<button type="submit" class="btn btn-success btn-lg">Enter</button>
 				</div>
 
 			</div>
 			<div class="row top-buffer">
 
-		  		<div class="col-xs-6">
+		  		<div class="col-xs-12">
 		  			<div ng-show="loginform.$submitted" >
 						<span ng-show="loginform.username.$error.required" class='alert alert-danger' role="alert">Username cannot be empty.</span>
 						<span ng-show="loginform.username.$error.minlength || loginform.username.$error.maxlength" class='alert alert-danger' role="alert">
