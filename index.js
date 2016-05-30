@@ -7,10 +7,10 @@ var userArray = [];
 
 var port = process.env.PORT || 8080;
 
-var s = http.listen(port, "localhost", function () {
+var s = http.listen(port, function () {
     var host = s.address().address;
     var port = s.address().port;
-    console.log('Group Poll app listening at http://%s:%s', host, port);
+    console.log('app listening at http://%s:%s', host, port);
 });
 
 app.use(express.static(__dirname + '/public'));
