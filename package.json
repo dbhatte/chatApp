@@ -17,7 +17,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "mocha",
-    "postinstall": "bower install && grunt build"
+    "postinstall": "HOME=$OPENSHIFT_DATA_DIR && bower install && grunt build"
   },
   "engines": {
     "node": "5.0.0"
