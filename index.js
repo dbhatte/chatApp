@@ -1,17 +1,25 @@
 var express = require('express');
 var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
 var userArray = [];
+/*
+var port = process.env.PORT || 3000;
 
-var port = process.env.PORT || 8080;
-
-var s = http.listen(port, function () {
+var s = server.listen(port, function () {
     var host = s.address().address;
     var port = s.address().port;
     console.log('app listening at http://%s:%s', host, port);
 });
+*/
+
+var port = process.env.OPENSHIFT_NODEJS_PORT || 3000
+var ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+server.listen(port, ip_address, function () {
+  console.log( "Listening on " + ip_address + ", port " + port )
+});
+
 
 app.use(express.static(__dirname + '/public'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
