@@ -5,15 +5,16 @@
   "description": "socket.io chat application",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.10.2",
-    "socket.io": "^1.4.6",
+    "body-parser": "^1.15.1",
     "bower": "^1.7.9",
+    "express": "^4.10.2",
     "grunt": "^1.0.1",
     "grunt-contrib-uglify": "^1.0.1",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt-contrib-watch": "^1.0.0",
+    "mongoose": "^4.4.19",
+    "socket.io": "^1.4.6"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "node index.js",
     "test": "mocha",
