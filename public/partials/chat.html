@@ -1,7 +1,9 @@
 <div class="container-fluid">
 	<div class="row top-buffer">
   		<div class="col-xs-12">
-		  <ul id="messages"></ul>
+		  <ul id="messages" ng-repeat="message in messages">
+	  			<li>{{message.username}} :{{message.message}}</li>
+		  </ul>
 		</div>
 	</div>
 	<div class="row top-buffer">

@@ -12,7 +12,12 @@ chatApp.config(['$routeProvider', function($routeProvider){
     }).
     when('/chat', {
       templateUrl: 'partials/chat.html',
-      controller: 'ChatController'
+      controller: 'ChatController',
+      resolve: {
+        messages: ['ChatService', function(ChatService){
+          return ChatService.getAll();
+        }]
+      }
     }).
     otherwise({
       redirectTo: '/'

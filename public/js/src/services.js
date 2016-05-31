@@ -18,14 +18,23 @@ services.factory('LoggedInUser', ['$cookies', function($cookies){
 }]);
 
 
-services.factory('ChatService', function(){
-	return {
+services.factory('ChatService', ['$http', function($http){
+	var o = {
+		messages: [],
 		sendMessage: function(message){
 	        socket.emit('chat message', message);
+	        return $http.post('/messages', message).success(function(data){
+		    	o.messages.push(data);
+		  	});
+		},
+		getAll: function(){
+			return $http.get('/messages').success(function(data){
+		      angular.copy(data, o.messages);
+		    });
 		}
 	}
-
-});
+	return o;
+}]);
 /*
 	This service exposes abort functionality to the controllers
 */

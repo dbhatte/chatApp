@@ -52,6 +52,8 @@ controllers.controller('LoginScreenController', ['$scope', '$location', 'LoggedI
 controllers.controller('ChatController', ['$scope', 'LoggedInUser', 'ChatService', 
     function ($scope, LoggedInUser, ChatService){
 
+    $scope.messages = ChatService.messages;
+
     socket.on('chat message', function(msg){
         $('#messages').append($('<li>').text(msg.username + ": "+ msg.message));
     });
