@@ -4,7 +4,7 @@ var chatApp = angular.module('chatApp', ['ngRoute', 'chatApp.controllers', 'chat
 
 var socket = io();
 
-chatApp.config(['$routeProvider', function($routeProvider){
+chatApp.config(['$routeProvider', '$cookiesProvider', function($routeProvider, $cookiesProvider){
 	$routeProvider.
     when('/', {
       templateUrl: 'partials/login.html',
@@ -22,5 +22,7 @@ chatApp.config(['$routeProvider', function($routeProvider){
     otherwise({
       redirectTo: '/'
     });
+
+    $cookiesProvider.defaults.expires = "Tue, 15-Aug-2017 15:00:24 GMT"
 }]);
 

@@ -4,7 +4,6 @@
 	    <h3 class="panel-title">Please enter your Username</h3>
 	  </div>
 	  <div class="panel-body">
-	    <div class="container">
 			<div class="row top-buffer">
 		  		<div class="col-xs-12">
 				  <div>
@@ -24,14 +23,13 @@
 		  			<div ng-show="loginform.$submitted" >
 						<span ng-show="loginform.username.$error.required" class='alert alert-danger' role="alert">Username cannot be empty.</span>
 						<span ng-show="loginform.username.$error.minlength || loginform.username.$error.maxlength" class='alert alert-danger' role="alert">
-	      					Username should be 4 to 32 characters in length.
+	      					Username should be 4 to 32 characters.
 						</span>
 
 				    </div>
 			    	<message data="messageObject" ></message>
 			  	</div>
 			</div>
-		</div>
 	  </div>
 	</div>
 </form>
