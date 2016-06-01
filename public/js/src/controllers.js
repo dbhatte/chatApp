@@ -1,6 +1,6 @@
 'use strict';
 
-var controllers = angular.module('controllers', ['services']);
+var controllers = angular.module('chatApp.controllers', ['chatApp.services']);
 
 /*
     Main Controller implements abort functionality which is shared by all child controllers
@@ -49,20 +49,31 @@ controllers.controller('LoginScreenController', ['$scope', '$location', 'LoggedI
 }]);
 
 
-controllers.controller('ChatController', ['$scope', 'LoggedInUser', 'ChatService', 
-    function ($scope, LoggedInUser, ChatService){
+controllers.controller('ChatController', ['$scope', 'LoggedInUser', 'ChatService', 'messageList',
+    function ($scope, LoggedInUser, ChatService, messageList){
 
-    $scope.messages = ChatService.messages;
+    $scope.messageList = messageList.data;
+    $scope.currentUser = LoggedInUser.getUser();
+    /*$scope.messageList.data.forEach(function(msg){
+        if (msg.username !== LoggedInUser.getUser()) {
+            $('#messages').append($('<li>').text(msg.username + ": "+ msg.message));
+        }
+        else {
+            $('#messages').append($('<li style="text-align: right;">').text(msg.username + ": "+ msg.message));
+        }
+    });*/
 
     socket.on('chat message', function(msg){
-        $('#messages').append($('<li>').text(msg.username + ": "+ msg.message));
+        if (msg.username !== LoggedInUser.getUser()) {
+            $('#messages').append($('<li>').text(msg.username + ": "+ msg.message));
+        }
     });
 
     $scope.sendMessage = function(){
-        ChatService.sendMessage({username: LoggedInUser.getUser(), message: $scope.message});
+        $('#messages').append($('<li class="right">').text($scope.currentUser + ": "+ $scope.message));
+        ChatService.sendMessage({username: $scope.currentUser, message: $scope.message});
         $scope.message = "";
     };
 
-   
 }]);
 

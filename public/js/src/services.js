@@ -1,6 +1,6 @@
 'use strict';
 
-var services = angular.module('services', ['ngResource', 'ngCookies']);
+var services = angular.module('chatApp.services', ['ngResource', 'ngCookies']);
 
 /*
 	This service is used to share the details of currently logged-in user between controllers

@@ -1,6 +1,6 @@
 'use strict';
 
-var chatApp = angular.module('ChatApp', ['ngRoute', 'controllers', 'directives']);
+var chatApp = angular.module('chatApp', ['ngRoute', 'chatApp.controllers', 'chatApp.directives']);
 
 var socket = io();
 
@@ -14,7 +14,7 @@ chatApp.config(['$routeProvider', function($routeProvider){
       templateUrl: 'partials/chat.html',
       controller: 'ChatController',
       resolve: {
-        messages: ['ChatService', function(ChatService){
+        messageList: ['ChatService', function(ChatService){
           return ChatService.getAll();
         }]
       }

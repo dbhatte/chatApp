@@ -1,6 +1,6 @@
 'use strict';
 
-var directives = angular.module('directives', []);
+var directives = angular.module('chatApp.directives', []);
 
 /*
   Message directive displays error and info messages.
