@@ -23,7 +23,7 @@ controllers.controller('LoginScreenController', ['$scope', '$location', 'LoggedI
 
 
     if (angular.isDefined(LoggedInUser.getUser())) {
-        broadcastAndRedirect();
+        //broadcastAndRedirect();
     }   
 
     function broadcastAndRedirect(){
@@ -54,14 +54,6 @@ controllers.controller('ChatController', ['$scope', 'LoggedInUser', 'ChatService
 
     $scope.messageList = messageList.data;
     $scope.currentUser = LoggedInUser.getUser();
-    /*$scope.messageList.data.forEach(function(msg){
-        if (msg.username !== LoggedInUser.getUser()) {
-            $('#messages').append($('<li>').text(msg.username + ": "+ msg.message));
-        }
-        else {
-            $('#messages').append($('<li style="text-align: right;">').text(msg.username + ": "+ msg.message));
-        }
-    });*/
 
     socket.on('chat message', function(msg){
         if (msg.username !== LoggedInUser.getUser()) {

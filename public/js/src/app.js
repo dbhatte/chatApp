@@ -1,6 +1,6 @@
 'use strict';
 
-var chatApp = angular.module('chatApp', ['ngRoute', 'chatApp.controllers', 'chatApp.directives']);
+var chatApp = angular.module('chatApp', ['ngRoute', 'ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'chatApp.controllers', 'chatApp.directives']);
 
 var socket = io();
 
