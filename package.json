@@ -14,7 +14,9 @@
     "mongoose": "^4.4.19",
     "socket.io": "^1.4.6"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "sw-precache": "^3.2.0"
+  },
   "scripts": {
     "start": "node index.js",
     "test": "mocha",

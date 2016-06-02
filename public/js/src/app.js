@@ -26,3 +26,8 @@ chatApp.config(['$routeProvider', '$cookiesProvider', function($routeProvider, $
     $cookiesProvider.defaults.expires = "Tue, 15-Aug-2017 15:00:24 GMT"
 }]);
 
+if('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('/service-worker.js')
+        .then(function() { console.log('Service Worker Registered'); });
+}
